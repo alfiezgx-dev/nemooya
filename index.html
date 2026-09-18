@@ -28,7 +28,7 @@ header{position:sticky;top:0;z-index:30;background:rgba(255,250,244,.9);backdrop
 .paper:after{content:"";position:absolute;inset:8px;border:1px dashed rgba(107,52,47,.14);border-radius:20px;pointer-events:none;z-index:4}
 .photo-card{width:320px;min-height:285px;border-radius:28px;display:flex;align-items:flex-end;padding:20px;position:relative;isolation:isolate}
 .quick{grid-area:quick}.healthy{grid-area:healthy}.cocktail{grid-area:cocktail}.life{grid-area:life}
-.card-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}.photo-card:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(49,21,18,.38),rgba(49,21,18,.02) 62%);z-index:1}.label{position:relative;z-index:2;width:min(92%,250px);background:rgba(255,248,239,.94);border:1px solid rgba(107,52,47,.13);border-radius:18px;padding:15px 16px;box-shadow:0 8px 18px rgba(72,36,31,.12);transform:rotate(-1.4deg)}
+.card-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}.healthy .card-photo{object-position:center 45%}.photo-card:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(49,21,18,.38),rgba(49,21,18,.02) 62%);z-index:1}.label{position:relative;z-index:2;width:min(92%,250px);background:rgba(255,248,239,.94);border:1px solid rgba(107,52,47,.13);border-radius:18px;padding:15px 16px;box-shadow:0 8px 18px rgba(72,36,31,.12);transform:rotate(-1.4deg)}
 .healthy .label,.life .label{transform:rotate(1.1deg)}.label h2{font:400 1.62rem/1.02 Georgia,"Times New Roman",serif;margin:0 0 7px;letter-spacing:-.02em}.label .cn{font:500 .82rem/1.35 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;color:var(--ink2)}.label small{display:block;margin-top:9px;line-height:1.35;color:var(--ink2)}
 .stamp{position:absolute;z-index:3;top:14px;right:14px;background:#fff9ef;border:1px solid var(--line);border-radius:999px;padding:8px 10px;font:700 .66rem Georgia,serif;box-shadow:0 6px 16px rgba(82,44,37,.12);transform:rotate(6deg)}
 
@@ -99,7 +99,7 @@ footer{border-top:1px solid var(--line);padding:27px 0 34px}.foot{display:grid;g
       <div class="label"><div class="caps">Drinks · 03</div><h2>Atmospheric<br>Cocktails</h2><div class="cn">氛围感调酒 →</div><small>Pretty drinks, small rituals and better nights.</small></div>
     </article>
 
-    <article id="healthy" class="paper photo-card healthy"><img class="card-photo" data-qa="content-image" src="assets/healthy.webp" width="492" height="674" alt="NEMO OYA healthy light meal post">
+    <article id="healthy" class="paper photo-card healthy"><img class="card-photo" data-qa="content-image" src="assets/healthy-fitness.webp" width="941" height="2048" alt="NEMO OYA healthy fitness meal with shrimp and avocado">
       <span class="stamp">LIGHT & HAPPY</span>
       <div class="label"><div class="caps">Food · 02</div><h2>Healthy<br>Light Meals</h2><div class="cn">健康减脂餐 →</div><small>Lighter food without losing the joy.</small></div>
     </article>
