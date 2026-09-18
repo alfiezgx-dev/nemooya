@@ -39,7 +39,7 @@ for (const t of targets) {
       overflow: document.documentElement.scrollWidth - window.innerWidth,
       h1Font: h1 ? parseFloat(getComputedStyle(h1).fontSize) : null,
       heroRatio: hero && hero.clientWidth ? hero.naturalWidth / hero.clientWidth : null,
-      contentRatios: content.map(i => i.clientWidth ? i.naturalWidth / i.clientWidth : 0),
+      contentRatios: content.filter(i => i.clientWidth > 0 && i.clientHeight > 0).map(i => i.naturalWidth / i.clientWidth),
       bodyText: document.body.innerText
     };
   });
