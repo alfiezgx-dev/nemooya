@@ -1,0 +1,35 @@
+name: Site QA
+
+on:
+  push:
+    branches: [staging]
+  pull_request:
+    branches: [main]
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow
+      - run: python qa/site_check.py
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright
+      - run: npx playwright install --with-deps chromium
+      - run: |
+          python -m http.server 4173 >/tmp/nemooya-http.log 2>&1 &
+          sleep 2
+      - run: node qa/browser_check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: site-qa-screenshots
+          path: qa-artifacts/
