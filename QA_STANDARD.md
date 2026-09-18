@@ -6,6 +6,7 @@ QA/development branch: **staging**
 No visual release should be pushed directly to main.
 
 ## Asset integrity
+- Current hero production asset is derived directly from the original 1278×1700 uploaded selfie and exported at 1000×1330 WebP quality 92.
 - No base64/data-URI photographs.
 - No photographic sprite sheets.
 - Every referenced local image must exist and decode.
