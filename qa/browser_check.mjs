@@ -49,7 +49,7 @@ for (const t of targets) {
       qa: img.dataset.qa || ''
     }));
     const visibleImages = images.filter(i => i.visible);
-    const h1 = document.querySelector('.mast h1');
+    const h1 = document.querySelector('.hero-title');
     const hero = document.querySelector('[data-qa="hero"]');
     const content = [...document.querySelectorAll('[data-qa="content-image"]')].filter(visible);
     const drafts = [...document.querySelectorAll('[data-status="draft"]')];
@@ -79,7 +79,10 @@ for (const t of targets) {
       hasOgTitle: !!document.querySelector('meta[property="og:title"]'),
       hasOgDescription: !!document.querySelector('meta[property="og:description"]'),
       hasOgImage: !!document.querySelector('meta[property="og:image"]'),
-      hasTwitterCard: !!document.querySelector('meta[name="twitter:card"][content="summary_large_image"]')
+      hasTwitterCard: !!document.querySelector('meta[name="twitter:card"][content="summary_large_image"]'),
+      heroWidth: document.querySelector('.hero-editorial')?.getBoundingClientRect().width || null,
+      exploreWidth: document.querySelector('#explore')?.getBoundingClientRect().width || null,
+      heroHeight: document.querySelector('.hero-editorial')?.getBoundingClientRect().height || null
     };
   });
 
@@ -87,8 +90,10 @@ for (const t of targets) {
     if (img.visible && (!img.complete || img.naturalWidth === 0)) failures.push(`${t.name}: broken visible image ${img.src}`);
   }
   if (result.overflow > 2) failures.push(`${t.name}: horizontal overflow ${result.overflow}px`);
-  if (t.name === 'desktop' && result.h1Font > 110) failures.push(`desktop: masthead too large (${result.h1Font}px)`);
-  if (t.name === 'mobile' && result.h1Font > 64) failures.push(`mobile: masthead too large (${result.h1Font}px)`);
+  if (t.name === 'desktop' && result.h1Font > 66) failures.push(`desktop: hero title too large (${result.h1Font}px)`);
+  if (t.name === 'mobile' && result.h1Font > 60) failures.push(`mobile: hero title too large (${result.h1Font}px)`);
+  if (t.name === 'desktop' && result.heroWidth !== null && result.exploreWidth !== null && Math.abs(result.heroWidth - result.exploreWidth) > 3) failures.push(`desktop: hero width ${result.heroWidth.toFixed(1)}px does not align with content width ${result.exploreWidth.toFixed(1)}px`);
+  if (t.name === 'desktop' && result.heroHeight !== null && result.heroHeight > 590) failures.push(`desktop: hero too tall (${result.heroHeight.toFixed(0)}px > 590px)`);
   if (result.heroRatio !== null && result.heroRatio < 1.5) failures.push(`${t.name}: hero image density ${result.heroRatio.toFixed(2)}x < 1.5x`);
   if (result.heroFetchPriority !== 'high') failures.push(`${t.name}: hero image missing fetchpriority=high`);
   for (const [i, r] of result.contentRatios.entries()) {
