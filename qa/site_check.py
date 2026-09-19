@@ -4,6 +4,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML = ROOT / "index.html"
+TEMPLATES = [ROOT / "recipe-template.html", ROOT / "cocktail-template.html"]
 errors = []
 
 def fail(msg):
@@ -13,8 +14,14 @@ if not HTML.exists():
     fail("index.html is missing")
 else:
     text = HTML.read_text(encoding="utf-8")
-
-    for token in ['<meta name="viewport"', '<meta name="description"', '<title>', 'lang="en"']:
+    required_tokens = [
+        '<meta name="viewport"', '<meta name="description"', '<link rel="canonical"',
+        '<link rel="preload" as="image" href="/assets/hero.webp"',
+        '<meta property="og:title"', '<meta property="og:description"', '<meta property="og:image"',
+        '<meta property="og:type"', '<meta name="twitter:card" content="summary_large_image"',
+        '<title>', 'lang="en"', '[data-status="draft"]'
+    ]
+    for token in required_tokens:
         if token not in text:
             fail(f"Missing required HTML token: {token}")
 
@@ -28,7 +35,7 @@ else:
         ref = m.group(1).strip()
         if ref and not ref.startswith(("http://", "https://", "#", "mailto:", "javascript:")):
             if ref.lower().endswith((".jpg", ".jpeg", ".png", ".webp", ".avif", ".gif", ".svg")):
-                refs.add(ref)
+                refs.add(ref.lstrip("/"))
 
     for ref in sorted(refs):
         p = ROOT / ref
@@ -60,10 +67,18 @@ else:
         if not re.search(r'\bheight=["\']?\d+', tag, flags=re.I):
             fail(f"Image missing height attribute: {tag[:140]}")
 
+for template in TEMPLATES:
+    if not template.exists():
+        fail(f"Missing content template: {template.name}")
+        continue
+    t = template.read_text(encoding="utf-8")
+    for token in ("<article", "<h1", 'class="ingredients"', 'class="steps"', 'name="robots" content="noindex"'):
+        if token not in t:
+            fail(f"{template.name} missing semantic template token: {token}")
+
 if errors:
     print("\nSITE QA FAILED")
     for e in errors:
         print(" -", e)
     sys.exit(1)
-
 print("SITE QA PASSED")

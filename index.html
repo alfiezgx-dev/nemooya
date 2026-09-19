@@ -4,55 +4,75 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="NEMO OYA — quick meals, healthy light meals, atmospheric cocktails and life aesthetics.">
+<meta name="theme-color" content="#fffaf4">
+<link rel="canonical" href="https://nemooya.pages.dev/">
+<link rel="preload" as="image" href="/assets/hero.webp" fetchpriority="high">
+<meta property="og:title" content="NEMO OYA — Food & A Sweeter Life">
+<meta property="og:description" content="Quick meals, healthy light meals, atmospheric cocktails and life aesthetics.">
+<meta property="og:image" content="https://nemooya.pages.dev/assets/hero.webp">
+<meta property="og:image:alt" content="NEMO OYA creator portrait">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="1330">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nemooya.pages.dev/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NEMO OYA — Food & A Sweeter Life">
+<meta name="twitter:description" content="Quick meals, healthy light meals, atmospheric cocktails and life aesthetics.">
 <title>NEMO OYA — Food & A Sweeter Life</title>
 <style>
 :root{
   --ink:#6b342f;--ink2:#8f625c;--paper:#fffaf4;--cream:#fff5eb;
   --rose:#e89c9b;--rose2:#f5c9ca;--butter:#f5d88f;--sage:#dce7d2;
   --peach:#f5ddce;--line:rgba(107,52,47,.16);--shadow:0 14px 34px rgba(105,59,53,.12);
+  --font-display:var(--font-display);
+  --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --font-cjk:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --header-height:68px;--radius-card:28px;--radius-soft:18px;--radius-pill:999px;
+  --space-1:8px;--space-2:12px;--space-3:16px;--space-4:24px;--space-5:32px;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:var(--font-body);background:
 radial-gradient(circle at 10% 5%,rgba(245,216,143,.2),transparent 24%),
 radial-gradient(circle at 88% 12%,rgba(245,201,202,.32),transparent 25%),
 linear-gradient(180deg,#fffaf4,#fffdf9 50%,#fff8f1)}
 body:before{content:"";position:fixed;inset:0;z-index:-1;opacity:.22;pointer-events:none;background-image:radial-gradient(rgba(107,52,47,.14) .55px,transparent .55px);background-size:7px 7px}
-a{color:inherit;text-decoration:none}.wrap{width:min(1220px,calc(100% - 34px));margin:auto}.serif{font-family:Georgia,"Times New Roman",serif}.script{font-family:Georgia,"Times New Roman",serif;font-style:italic}.caps{text-transform:uppercase;letter-spacing:.16em;font-size:.67rem;font-weight:800}
+a{color:inherit;text-decoration:none}[data-status="draft"]{display:none!important}section[id],article[id]{scroll-margin-top:calc(var(--header-height) + 20px)}.wrap{width:min(1220px,calc(100% - 34px));margin:auto}.serif{font-family:var(--font-display)}.script{font-family:var(--font-display);font-style:italic}.caps{text-transform:uppercase;letter-spacing:.16em;font-size:.67rem;font-weight:800}
 
 header{position:sticky;top:0;z-index:30;background:rgba(255,250,244,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(107,52,47,.09)}
-.nav{height:68px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}.nav-brand{font:700 1rem Georgia,serif;letter-spacing:.11em}.links{display:flex;gap:22px;font:400 .79rem Georgia,serif}.links a{padding:9px 0;border-bottom:2px solid transparent}.links a:hover{border-color:var(--rose)}.ig{justify-self:end;border:1px solid var(--ink);border-radius:999px;padding:9px 14px;font-size:.74rem}
+.nav{height:var(--header-height);display:grid;grid-template-columns:1fr auto 1fr;align-items:center}.nav-brand{font:700 1rem var(--font-display);letter-spacing:.11em}.links{display:flex;gap:22px;font:400 .79rem var(--font-display)}.links a{padding:9px 0;border-bottom:2px solid transparent}.links a:hover{border-color:var(--rose)}.ig{justify-self:end;border:1px solid var(--ink);border-radius:var(--radius-pill);padding:9px 14px;font-size:.74rem}
 
-.mast{text-align:center;padding:26px 0 20px;position:relative}.mast h1{font:400 clamp(3.6rem,6.2vw,6.25rem)/.92 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin:0;color:#74372f}.mast p{font:italic 1rem/1.25 Georgia,"Times New Roman",serif;color:var(--rose);margin:11px 0 0}.spark{position:absolute;color:#d6a044;font-size:1.7rem}.sp1{left:13%;top:62px}.sp2{right:14%;top:79px}.bow{width:76px;height:36px;margin:0 auto 4px;position:relative}.bow:before,.bow:after{content:"";position:absolute;top:5px;width:34px;height:24px;border:4px solid var(--rose);border-radius:70% 35% 70% 35%;background:#fff4ef}.bow:before{left:2px;transform:rotate(16deg)}.bow:after{right:2px;transform:scaleX(-1) rotate(16deg)}.bow i{position:absolute;left:31px;top:12px;width:15px;height:15px;border-radius:50%;background:var(--rose);z-index:2}
+.mast{text-align:center;padding:26px 0 20px;position:relative}.mast h1{font:400 clamp(3.6rem,6.2vw,6.25rem)/.92 var(--font-display);letter-spacing:-.045em;margin:0;color:#74372f}.mast p{font:italic 1rem/1.25 var(--font-display);color:var(--rose);margin:11px 0 0}.spark{position:absolute;color:#d6a044;font-size:1.7rem}.sp1{left:13%;top:62px}.sp2{right:14%;top:79px}.bow{width:76px;height:36px;margin:0 auto 4px;position:relative}.bow:before,.bow:after{content:"";position:absolute;top:5px;width:34px;height:24px;border:4px solid var(--rose);border-radius:70% 35% 70% 35%;background:#fff4ef}.bow:before{left:2px;transform:rotate(16deg)}.bow:after{right:2px;transform:scaleX(-1) rotate(16deg)}.bow i{position:absolute;left:31px;top:12px;width:15px;height:15px;border-radius:50%;background:var(--rose);z-index:2}
 
 .hero-grid{display:grid;grid-template-columns:320px minmax(400px,430px) 320px;grid-template-areas:"quick hero cocktail" "healthy hero life";gap:14px;align-items:stretch;justify-content:center;max-width:1110px}
 .paper{position:relative;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden;background:#fffaf4}
 .paper:after{content:"";position:absolute;inset:8px;border:1px dashed rgba(107,52,47,.14);border-radius:20px;pointer-events:none;z-index:4}
-.photo-card{width:320px;min-height:285px;border-radius:28px;display:flex;align-items:flex-end;padding:20px;position:relative;isolation:isolate}
+.photo-card{width:320px;min-height:285px;border-radius:var(--radius-card);display:flex;align-items:flex-end;padding:20px;position:relative;isolation:isolate}
 .quick{grid-area:quick}.healthy{grid-area:healthy}.cocktail{grid-area:cocktail}.life{grid-area:life}
-.card-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}.healthy .card-photo{object-position:center 45%}.photo-card:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(49,21,18,.38),rgba(49,21,18,.02) 62%);z-index:1}.label{position:relative;z-index:2;width:min(92%,250px);background:rgba(255,248,239,.94);border:1px solid rgba(107,52,47,.13);border-radius:18px;padding:15px 16px;box-shadow:0 8px 18px rgba(72,36,31,.12);transform:rotate(-1.4deg)}
-.healthy .label,.life .label{transform:rotate(1.1deg)}.label h2{font:400 1.62rem/1.02 Georgia,"Times New Roman",serif;margin:0 0 7px;letter-spacing:-.02em}.label .cn{font:500 .82rem/1.35 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;color:var(--ink2)}.label small{display:block;margin-top:9px;line-height:1.35;color:var(--ink2)}
-.stamp{position:absolute;z-index:3;top:14px;right:14px;background:#fff9ef;border:1px solid var(--line);border-radius:999px;padding:8px 10px;font:700 .66rem Georgia,serif;box-shadow:0 6px 16px rgba(82,44,37,.12);transform:rotate(6deg)}
+.card-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}.healthy .card-photo{object-position:center 45%}.semantic-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;background:radial-gradient(circle at 35% 25%,rgba(255,255,255,.78),transparent 28%),linear-gradient(145deg,#eee5dc,#e5eadb 54%,#f1d9d6);color:rgba(107,52,47,.68);letter-spacing:.12em}.semantic-placeholder strong{font:600 .92rem/1.2 var(--font-display);letter-spacing:.04em}.semantic-placeholder small{font-size:.62rem;letter-spacing:.16em}.feature-photo-img.semantic-placeholder{display:flex}.note-placeholder{height:142px}.photo-card:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(49,21,18,.38),rgba(49,21,18,.02) 62%);z-index:1}.label{position:relative;z-index:2;width:min(92%,250px);background:rgba(255,248,239,.94);border:1px solid rgba(107,52,47,.13);border-radius:18px;padding:15px 16px;box-shadow:0 8px 18px rgba(72,36,31,.12);transform:rotate(-1.4deg)}
+.healthy .label,.life .label{transform:rotate(1.1deg)}.label h2{font:400 1.62rem/1.02 var(--font-display);margin:0 0 7px;letter-spacing:-.02em}.label .cn{font:500 .82rem/1.35 var(--font-cjk);color:var(--ink2)}.label small{display:block;margin-top:9px;line-height:1.35;color:var(--ink2)}
+.stamp{position:absolute;z-index:3;top:14px;right:14px;background:#fff9ef;border:1px solid var(--line);border-radius:var(--radius-pill);padding:8px 10px;font:700 .66rem var(--font-display);box-shadow:0 6px 16px rgba(82,44,37,.12);transform:rotate(6deg)}
 
 .hero{grid-area:hero;min-height:560px;display:grid;place-items:center;padding:16px 0;overflow:visible}
 .frame{position:relative;width:430px;height:540px;min-height:540px;padding:12px;border-radius:46% 46% 29% 29%/27% 27% 16% 16%;background:linear-gradient(145deg,#f0aaa9,#fff0e6 52%,#dce7d2);box-shadow:0 24px 54px rgba(111,62,55,.18)}
 .frame:before{content:"";position:absolute;inset:8px;border:2px solid rgba(255,255,255,.76);border-radius:inherit;z-index:3}.frame img{width:100%;height:100%;object-fit:cover;object-position:center 36%;border-radius:44% 44% 27% 27%/26% 26% 15% 15%;display:block}
 .ribbon{position:absolute;z-index:6;top:-28px;left:50%;transform:translateX(-50%);width:122px;height:70px}.ribbon:before,.ribbon:after{content:"";position:absolute;top:18px;width:53px;height:34px;border:7px solid #e99aa0;border-radius:68% 30% 68% 30%;background:#fff0e7}.ribbon:before{left:0;transform:rotate(15deg)}.ribbon:after{right:0;transform:scaleX(-1) rotate(15deg)}.ribbon i{position:absolute;left:49px;top:25px;width:24px;height:24px;border-radius:50%;background:#e99aa0;z-index:2}
-.note{position:absolute;z-index:7;background:#fff4e9;border:1px solid var(--line);box-shadow:0 8px 18px rgba(91,47,43,.11);font:italic .88rem/1.28 Georgia,"Times New Roman",serif}.heart-note{left:-13px;top:180px;width:114px;padding:18px 12px;border-radius:49%;background:#f7c5c7;text-align:center;transform:rotate(-5deg)}.bubble{right:-8px;bottom:78px;padding:14px 18px;border-radius:50%;transform:rotate(5deg);text-align:center}
+.note{position:absolute;z-index:7;background:#fff4e9;border:1px solid var(--line);box-shadow:0 8px 18px rgba(91,47,43,.11);font:italic .88rem/1.28 var(--font-display)}.heart-note{left:-13px;top:180px;width:114px;padding:18px 12px;border-radius:49%;background:#f7c5c7;text-align:center;transform:rotate(-5deg)}.bubble{right:-8px;bottom:78px;padding:14px 18px;border-radius:50%;transform:rotate(5deg);text-align:center}
 .cat-peek{position:absolute;z-index:8;right:9px;bottom:-8px;width:88px;height:70px;background:#fff6ea;border:2px solid #dcb9ab;border-radius:54% 54% 44% 44%;box-shadow:0 7px 16px rgba(91,47,43,.12)}.cat-peek:before,.cat-peek:after{content:"";position:absolute;top:-17px;width:28px;height:30px;background:#fff6ea;border:2px solid #dcb9ab;transform:rotate(45deg);z-index:-1}.cat-peek:before{left:8px}.cat-peek:after{right:8px}.eyes{position:absolute;top:27px;left:21px;width:8px;height:10px;border-radius:50%;background:#72504a;box-shadow:37px 0 0 #72504a}.nose{position:absolute;top:43px;left:40px;width:8px;height:6px;border-radius:50%;background:#e4a4a2}
 
-.promise{margin:26px 0;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}.promise h3{font:400 clamp(1.4rem,2.35vw,2.1rem)/1.23 Georgia,serif;margin:0}.promise p{margin:7px 0 0;color:var(--rose);font-size:1.06rem}
+.promise{margin:26px 0;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}.promise h3{font:400 clamp(1.4rem,2.35vw,2.1rem)/1.23 var(--font-display);margin:0}.promise p{margin:7px 0 0;color:var(--rose);font-size:1.06rem}
 
-.mid{display:grid;grid-template-columns:1.35fr .95fr;gap:16px;align-items:start}.featured,.about{border-radius:28px;padding:26px}.featured{background:#fff7ee;align-self:start}.about{background:#fff9f5;align-self:start}.section-title{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:17px}.section-title h2{font:400 2.08rem/1 Georgia,serif;margin:0}.section-title small{color:var(--ink2)}
-.feature-body{display:grid;grid-template-columns:300px 1fr;gap:20px;align-items:center}.feature-photo-img{display:block;width:300px;height:285px;object-fit:cover;border-radius:22px;box-shadow:inset 0 0 0 9px rgba(255,255,255,.36)}.feature-copy .tag{display:inline-block;background:#fff7ea;border:1px solid var(--line);padding:7px 10px;border-radius:10px;font:700 .78rem Georgia,serif;transform:rotate(-2deg)}.feature-copy h3{font:400 1.9rem/1.05 Georgia,serif;margin:12px 0}.feature-copy p,.about p{font-size:.92rem;line-height:1.62;color:var(--ink2)}.btn{display:inline-flex;padding:11px 16px;border-radius:999px;background:var(--rose2);font-size:.76rem;font-weight:800}
-.about-top{display:grid;grid-template-columns:1fr 112px;gap:16px;align-items:start}.about-polaroid{background:#fff;padding:7px 7px 18px;border:1px solid var(--line);box-shadow:0 10px 22px rgba(95,57,48,.11);transform:rotate(4deg)}.about-photo{display:block;width:100%;height:98px;object-fit:cover;object-position:center 32%}.about .script{display:block;font:italic 1.05rem/1.3 Georgia,"Times New Roman",serif;color:var(--rose);margin:10px 0 16px}
+.mid{display:grid;grid-template-columns:1fr;gap:16px;align-items:start}.featured,.about{border-radius:var(--radius-card);padding:26px}.featured{background:#fff7ee;align-self:start}.about{background:#fff9f5;align-self:start}.section-title{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:17px}.section-title h2{font:400 2.08rem/1 var(--font-display);margin:0}.section-title small{color:var(--ink2)}
+.feature-body{display:grid;grid-template-columns:300px 1fr;gap:20px;align-items:center}.feature-photo-img{display:block;width:300px;height:285px;object-fit:cover;border-radius:22px;box-shadow:inset 0 0 0 9px rgba(255,255,255,.36)}.feature-copy .tag{display:inline-block;background:#fff7ea;border:1px solid var(--line);padding:7px 10px;border-radius:10px;font:700 .78rem var(--font-display);transform:rotate(-2deg)}.feature-copy h3{font:400 1.9rem/1.05 var(--font-display);margin:12px 0}.feature-copy p,.about p{font-size:.92rem;line-height:1.62;color:var(--ink2)}.btn{display:inline-flex;padding:11px 16px;border-radius:var(--radius-pill);background:var(--rose2);font-size:.76rem;font-weight:800}
+.about-top{display:grid;grid-template-columns:1fr 112px;gap:16px;align-items:start}.about-polaroid{background:#fff;padding:7px 7px 18px;border:1px solid var(--line);box-shadow:0 10px 22px rgba(95,57,48,.11);transform:rotate(4deg)}.about-photo{display:block;width:100%;height:98px;object-fit:cover;object-position:center 32%}.about .script{display:block;font:italic 1.05rem/1.3 var(--font-display);color:var(--rose);margin:10px 0 16px}
 
-.bottom{display:grid;grid-template-columns:1.2fr .86fr 1fr;gap:16px;margin:18px 0 28px;align-items:start}.panel{border-radius:27px;padding:24px;min-height:320px;align-self:start}.notes{background:#fffaf6}.newsletter{background:#fff2f1}.moments{background:#f8fbf4}.panel h3{font:400 1.5rem/1 Georgia,serif;margin:0 0 16px}
-.note-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.note-card{background:#fff;border:1px solid var(--line);padding:7px;border-radius:13px}.note-img{display:block;width:100%;height:142px;object-fit:cover;object-position:center;border-radius:9px}.note-card b{display:block;font:600 .78rem/1.28 Georgia,serif;margin-top:8px}.note-card span{font-size:.65rem;color:#9a7c74}
-.signup{display:flex;border:1px solid var(--line);border-radius:999px;background:#fff;overflow:hidden;margin:17px 0 10px}.signup input{min-width:0;flex:1;border:0;outline:0;padding:12px 14px}.signup button{border:0;background:var(--rose);color:white;font-weight:800;padding:0 15px}.newsletter p{color:var(--ink2);line-height:1.55}.newsletter .script{text-align:center;color:var(--rose);font-size:1.06rem;margin-top:28px}
-.ig-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.igpic{display:block;width:100%;height:86px;object-fit:cover;object-position:center;border-radius:10px}.moments .script{display:block;text-align:center;margin-top:14px;color:var(--rose);font:italic .95rem/1.25 Georgia,"Times New Roman",serif}
+.bottom{display:grid;grid-template-columns:1fr;gap:16px;margin:18px 0 28px;align-items:start}.panel{border-radius:27px;padding:24px;min-height:0;align-self:start}.notes{background:#fffaf6}.newsletter{background:#fff2f1}.moments{background:#f8fbf4}.panel h3{font:400 1.5rem/1 var(--font-display);margin:0 0 16px}
+.note-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.note-card{background:#fff;border:1px solid var(--line);padding:7px;border-radius:13px}.note-img{display:block;width:100%;height:142px;object-fit:cover;object-position:center;border-radius:9px}.note-card b{display:block;font:600 .78rem/1.28 var(--font-display);margin-top:8px}.note-card span{font-size:.65rem;color:#9a7c74}
+.signup{display:flex;border:1px solid var(--line);border-radius:var(--radius-pill);background:#fff;overflow:hidden;margin:17px 0 10px}.signup input{min-width:0;flex:1;border:0;outline:0;padding:12px 14px}.signup button{border:0;background:var(--rose);color:white;font-weight:800;padding:0 15px}.newsletter p{color:var(--ink2);line-height:1.55}.newsletter .script{text-align:center;color:var(--rose);font-size:1.06rem;margin-top:28px}
+.instagram-follow{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;background:linear-gradient(135deg,#fff9f5,#f8eee8)}.instagram-follow p{margin:7px 0 0;color:var(--ink2);line-height:1.55}.follow-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:var(--radius-pill);background:var(--ink);color:#fff;font-weight:800;font-size:.82rem;white-space:nowrap}.follow-btn:hover{opacity:.9}
 
-footer{border-top:1px solid var(--line);padding:27px 0 34px}.foot{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}.fbrand{font:700 1.18rem Georgia,serif;letter-spacing:.09em}.ftag{font-size:.76rem;color:var(--ink2)}.fright{justify-self:end;font-size:.73rem;color:var(--ink2)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+footer{border-top:1px solid var(--line);padding:27px 0 34px}.foot{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}.fbrand{font:700 1.18rem var(--font-display);letter-spacing:.09em}.ftag{font-size:.76rem;color:var(--ink2)}.fright{justify-self:end;font-size:.73rem;color:var(--ink2)}
 @media(max-width:960px){.links{display:none}.nav{grid-template-columns:1fr 1fr}.hero-grid{grid-template-columns:1fr 1fr;grid-template-areas:"hero hero" "quick cocktail" "healthy life"}.hero{min-height:590px}.frame{width:min(100%,490px)}.mid,.bottom{grid-template-columns:1fr}.feature-body{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.wrap{width:calc(100% - 22px)}.mast{padding-top:27px}.mast h1{font-size:3.6rem}.hero-grid{grid-template-columns:320px;grid-template-areas:"hero" "quick" "healthy" "cocktail" "life";gap:12px;justify-content:center}.hero{min-height:500px;padding:16px 0}.frame{width:320px;height:455px;min-height:455px}.heart-note{left:-2px;top:176px;transform:scale(.83) rotate(-5deg)}.bubble{right:-2px;bottom:60px;transform:scale(.86) rotate(5deg)}.photo-card{width:320px;min-height:270px}.mid,.bottom{gap:13px}.featured,.about,.panel{padding:20px}.feature-body{grid-template-columns:1fr}.feature-photo-img{width:100%;max-width:320px;height:285px}.note-grid{grid-template-columns:1fr 1fr}.note-card:nth-child(3){display:none}.foot{grid-template-columns:1fr}.ftag,.fright{display:none}}
+@media(max-width:620px){.instagram-follow{grid-template-columns:1fr}.follow-btn{justify-self:start}.wrap{width:calc(100% - 22px)}.mast{padding-top:27px}.mast h1{font-size:3.6rem}.hero-grid{grid-template-columns:320px;grid-template-areas:"hero" "quick" "healthy" "cocktail" "life";gap:12px;justify-content:center}.hero{min-height:500px;padding:16px 0}.frame{width:320px;height:455px;min-height:455px}.heart-note{left:-2px;top:176px;transform:scale(.83) rotate(-5deg)}.bubble{right:-2px;bottom:60px;transform:scale(.86) rotate(5deg)}.photo-card{width:320px;min-height:270px}.mid,.bottom{gap:13px}.featured,.about,.panel{padding:20px}.feature-body{grid-template-columns:1fr}.feature-photo-img{width:100%;max-width:320px;height:285px}.note-grid{grid-template-columns:1fr 1fr}.note-card:nth-child(3){display:none}.foot{grid-template-columns:1fr}.ftag,.fright{display:none}}
 </style>
 </head>
 <body>
@@ -66,7 +86,7 @@ footer{border-top:1px solid var(--line);padding:27px 0 34px}.foot{display:grid;g
       <a href="#life">Life Aesthetics</a>
       <a href="#about">About</a>
     </nav>
-    <a class="ig" href="https://www.instagram.com/nemo_oya/" target="_blank" rel="noreferrer">Instagram ↗</a>
+    <a class="ig" href="https://www.instagram.com/nemo_oya/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
   </div>
 </header>
 
@@ -79,7 +99,7 @@ footer{border-top:1px solid var(--line);padding:27px 0 34px}.foot{display:grid;g
   </section>
 
   <section class="wrap hero-grid">
-    <article id="quick" class="paper photo-card quick"><img class="card-photo" data-qa="content-image" src="assets/quick.webp" width="492" height="674" alt="NEMO OYA quick meal post">
+    <article id="quick" class="paper photo-card quick"><img class="card-photo" data-qa="content-image" src="assets/quick.webp" width="492" height="674" loading="lazy" decoding="async" alt="NEMO OYA quick meal post">
       <span class="stamp">30 MIN ♡</span>
       <div class="label"><div class="caps">Food · 01</div><h2>30-Minute<br>Quick Meals</h2><div class="cn">30分钟快手饭 →</div><small>Fast, cosy dishes made for real weeknights.</small></div>
     </article>
@@ -87,24 +107,24 @@ footer{border-top:1px solid var(--line);padding:27px 0 34px}.foot{display:grid;g
     <article class="hero">
       <div class="frame">
         <div class="ribbon"><i></i></div>
-        <img data-qa="hero" src="assets/hero.webp" width="900" height="1100" alt="NEMO OYA creator portrait">
+        <img data-qa="hero" src="assets/hero.webp" width="900" height="1100" fetchpriority="high" decoding="async" alt="NEMO OYA creator portrait">
         <div class="note heart-note">Eat Well<br>Live Gently<br>Be Happy ♡</div>
         <div class="note bubble">welcome to<br>my little world ♡</div>
         <div class="cat-peek"><i class="eyes"></i><i class="nose"></i></div>
       </div>
     </article>
 
-    <article id="cocktails" class="paper photo-card cocktail"><img class="card-photo" data-qa="content-image" src="assets/cocktail.webp" width="491" height="674" alt="NEMO OYA cocktail post">
+    <article id="cocktails" class="paper photo-card cocktail"><img class="card-photo" data-qa="content-image" src="assets/cocktail.webp" width="491" height="674" loading="lazy" decoding="async" alt="NEMO OYA cocktail post">
       <span class="stamp">CHEERS ✦</span>
       <div class="label"><div class="caps">Drinks · 03</div><h2>Atmospheric<br>Cocktails</h2><div class="cn">氛围感调酒 →</div><small>Pretty drinks, small rituals and better nights.</small></div>
     </article>
 
-    <article id="healthy" class="paper photo-card healthy"><img class="card-photo" data-qa="content-image" src="assets/healthy-fitness.webp" width="941" height="2048" alt="NEMO OYA healthy fitness meal with shrimp and avocado">
+    <article id="healthy" class="paper photo-card healthy"><img class="card-photo" data-qa="content-image" src="assets/healthy-fitness.webp" width="941" height="2048" loading="lazy" decoding="async" alt="NEMO OYA healthy fitness meal with shrimp and avocado">
       <span class="stamp">LIGHT & HAPPY</span>
       <div class="label"><div class="caps">Food · 02</div><h2>Healthy<br>Light Meals</h2><div class="cn">健康减脂餐 →</div><small>Lighter food without losing the joy.</small></div>
     </article>
 
-    <article id="life" class="paper photo-card life"><img class="card-photo" data-qa="content-image" src="assets/hero.webp" width="900" height="1100" alt="NEMO OYA life aesthetics post">
+    <article id="life" class="paper photo-card life"><div class="card-photo semantic-placeholder life-placeholder" role="img" aria-label="Life aesthetics photography placeholder"><strong>Life Aesthetics</strong><small>PHOTO ARCHIVE</small></div>
       <span class="stamp">LITTLE JOYS ♡</span>
       <div class="label"><div class="caps">Mood · 04</div><h2>Life<br>Aesthetics</h2><div class="cn">生活美学 →</div><small>Food, objects, city moments, travel light and everyday beauty.</small></div>
     </article>
@@ -118,10 +138,10 @@ footer{border-top:1px solid var(--line);padding:27px 0 34px}.foot{display:grid;g
   </section>
 
   <section class="wrap mid">
-    <article class="paper featured">
+    <article class="paper featured" data-status="draft">
       <div class="section-title"><div><div class="caps">This week</div><h2>Featured Recipe</h2></div><small>本周推荐</small></div>
       <div class="feature-body">
-        <img class="feature-photo-img" data-qa="content-image" src="assets/healthy-fitness.webp" width="941" height="2048" alt="Healthy fitness meal with shrimp and avocado featured recipe">
+        <div class="feature-photo-img semantic-placeholder" role="img" aria-label="Featured recipe photography placeholder"><strong>Featured Recipe</strong><small>RECIPE IMAGE</small></div>
         <div class="feature-copy">
           <span class="tag">Healthy Light Meal · 健康减脂餐</span>
           <h3>Simple ingredients.<br>Extra happiness.</h3>
@@ -135,27 +155,25 @@ footer{border-top:1px solid var(--line);padding:27px 0 34px}.foot{display:grid;g
       <div class="section-title"><div><div class="caps">Story</div><h2>About Me</h2></div><small>关于我</small></div>
       <div class="about-top">
         <div>
-          <p>Hi, I’m NEMO OYA. This space is for good food, atmospheric drinks and a life made a little prettier through everyday details.</p>
-          <span class="script">same girl, bigger dreams ♡</span>
-          <p>The full brand story will live here later — why NEMO OYA exists, what inspires it, and the little world behind the recipes and images.</p>
-          <span class="btn">Brand story coming soon →</span>
+          <p>Hi, I’m NEMO OYA. I make quick meals, lighter plates and atmospheric drinks, and I collect the small details that make everyday life feel special.</p>
+          <span class="script">good food, softer days ♡</span>
+          <p>This site brings those ideas together beyond the feed — a growing archive of recipes, drinks and everyday aesthetics.</p>
         </div>
-        <div class="about-polaroid"><img class="about-photo" data-qa="content-image" src="assets/hero.webp" width="900" height="1100" alt="NEMO OYA life aesthetics moment"></div>
       </div>
     </article>
   </section>
 
   <section class="wrap bottom">
-    <article class="paper panel notes">
+    <article class="paper panel notes" data-status="draft">
       <h3>Latest Notes</h3>
       <div class="note-grid">
-        <div class="note-card"><img class="note-img" data-qa="content-image" src="assets/quick.webp" width="492" height="674" alt="Quick meal note"><b>30分钟快手饭：好吃也可以很轻松</b><span>Coming soon</span></div>
-        <div class="note-card"><img class="note-img" data-qa="content-image" src="assets/hero.webp" width="900" height="1100" alt="Life aesthetics note"><b>生活美学：把普通一天过得更可爱</b><span>Coming soon</span></div>
-        <div class="note-card"><img class="note-img" data-qa="content-image" src="assets/cocktail.webp" width="491" height="674" alt="Cocktail note"><b>Some nights deserve a prettier drink</b><span>Coming soon</span></div>
+        <div class="note-card"><div class="note-img semantic-placeholder note-placeholder" role="img" aria-label="Quick meal note image placeholder"><small>QUICK MEAL NOTE</small></div><b>30分钟快手饭：好吃也可以很轻松</b><span>Coming soon</span></div>
+        <div class="note-card"><div class="note-img semantic-placeholder note-placeholder" role="img" aria-label="Life aesthetics note image placeholder"><small>LIFE AESTHETICS NOTE</small></div><b>生活美学：把普通一天过得更可爱</b><span>Coming soon</span></div>
+        <div class="note-card"><div class="note-img semantic-placeholder note-placeholder" role="img" aria-label="Cocktail note image placeholder"><small>COCKTAIL NOTE</small></div><b>Some nights deserve a prettier drink</b><span>Coming soon</span></div>
       </div>
     </article>
 
-    <article class="paper panel newsletter">
+    <article class="paper panel newsletter" data-status="draft">
       <h3>Join My Newsletter</h3>
       <p>和我一起，发现更美味、更可爱，也更有氛围感的生活。</p>
       <div class="signup"><input placeholder="Your email address" disabled><button disabled>Subscribe ♡</button></div>
@@ -163,13 +181,13 @@ footer{border-top:1px solid var(--line);padding:27px 0 34px}.foot{display:grid;g
       <p class="script">good food, good mood, to your inbox ♡</p>
     </article>
 
-    <article class="paper panel moments">
-      <h3>Instagram Moments</h3>
-      <div class="ig-grid">
-        <img class="igpic" data-qa="content-image" src="assets/hero.webp" width="900" height="1100" alt="Instagram life aesthetics moment"><img class="igpic" data-qa="content-image" src="assets/quick.webp" width="492" height="674" alt="Instagram quick meal moment"><img class="igpic" data-qa="content-image" src="assets/cocktail.webp" width="491" height="674" alt="Instagram cocktail moment">
-        <img class="igpic" data-qa="content-image" src="assets/healthy.webp" width="492" height="674" alt="Instagram healthy meal moment"><img class="igpic" data-qa="content-image" src="assets/hero.webp" width="900" height="1100" alt="Instagram creator moment"><img class="igpic" data-qa="content-image" src="assets/hero.webp" width="900" height="1100" alt="Instagram lifestyle moment">
+    <article class="paper panel instagram-follow">
+      <div>
+        <div class="caps">Social</div>
+        <h3>Follow on Instagram</h3>
+        <p>Recipes, drinks and everyday moments are posted there first.</p>
       </div>
-      <span class="script">collecting yummy moments ♡</span>
+      <a class="follow-btn" href="https://www.instagram.com/nemo_oya/" target="_blank" rel="noopener noreferrer" aria-label="Follow NEMO OYA on Instagram">@nemo_oya ↗</a>
     </article>
   </section>
 </main>
@@ -178,7 +196,7 @@ footer{border-top:1px solid var(--line);padding:27px 0 34px}.foot{display:grid;g
   <div class="wrap foot">
     <div class="fbrand">NEMO OYA ♡</div>
     <div class="ftag">Good Food · A Sweeter Life · With You</div>
-    <div class="fright">Instagram · TikTok · © <span id="year"></span></div>
+    <div class="fright">Instagram · © <span id="year"></span></div>
   </div>
 </footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
