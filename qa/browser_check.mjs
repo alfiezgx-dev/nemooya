@@ -118,4 +118,32 @@ if (failures.length) {
   failures.forEach(x => console.error(' -', x));
   process.exit(1);
 }
+for (const t of targets) {
+  const browser = await chromium.launch({headless:true});
+  const page = await browser.newPage({viewport:{width:t.width,height:t.height}, deviceScaleFactor:2});
+  const consoleErrors = [];
+  const pageErrors = [];
+  page.on('console', m => { if (m.type() === 'error') consoleErrors.push(m.text()); });
+  page.on('pageerror', e => pageErrors.push(String(e)));
+  await page.goto('http://127.0.0.1:4173/ai-lab.html', {waitUntil:'networkidle'});
+  await page.evaluate(() => document.fonts.ready);
+  const result = await page.evaluate(() => ({
+    overflow: document.documentElement.scrollWidth - window.innerWidth,
+    hasTitle: document.title === 'NEMO AI LAB',
+    hasGrid: !!document.querySelector('.lab-grid'),
+    cardCount: document.querySelectorAll('.lab-grid .card').length,
+    hasHome: !!document.querySelector('a[href="index.html"]')
+  }));
+  if (result.overflow > 2) failures.push(`${t.name}: AI Lab horizontal overflow ${result.overflow}px`);
+  if (!result.hasTitle || !result.hasGrid || result.cardCount < 4 || !result.hasHome) failures.push(`${t.name}: AI Lab structure incomplete`);
+  if (consoleErrors.length) failures.push(`${t.name}: AI Lab console errors: ${consoleErrors.join(' | ')}`);
+  if (pageErrors.length) failures.push(`${t.name}: AI Lab page errors: ${pageErrors.join(' | ')}`);
+  await page.screenshot({path:`qa-artifacts/${t.name}-ai-lab.png`, fullPage:true});
+  await browser.close();
+}
+if (failures.length) {
+  console.error('\nBROWSER QA FAILED AFTER AI LAB CHECK');
+  failures.forEach(x => console.error(' -', x));
+  process.exit(1);
+}
 console.log('BROWSER QA PASSED');

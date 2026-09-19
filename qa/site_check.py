@@ -5,6 +5,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 HTML = ROOT / "index.html"
 TEMPLATES = [ROOT / "recipe-template.html", ROOT / "cocktail-template.html"]
+AI_LAB = ROOT / "ai-lab.html"
 errors = []
 
 def fail(msg):
@@ -19,7 +20,8 @@ else:
         '<link rel="preload" as="image" href="/assets/hero.webp"',
         '<meta property="og:title"', '<meta property="og:description"', '<meta property="og:image"',
         '<meta property="og:type"', '<meta name="twitter:card" content="summary_large_image"',
-        '<title>', 'lang="en"', '[data-status="draft"]'
+        '<title>', 'lang="en"', '[data-status="draft"]',
+        'fonts.googleapis.com', "Cormorant Garamond", "DM Sans", 'href="ai-lab.html"'
     ]
     for token in required_tokens:
         if token not in text:
@@ -66,6 +68,14 @@ else:
             fail(f"Image missing width attribute: {tag[:140]}")
         if not re.search(r'\bheight=["\']?\d+', tag, flags=re.I):
             fail(f"Image missing height attribute: {tag[:140]}")
+
+if not AI_LAB.exists():
+    fail("Missing AI Lab page: ai-lab.html")
+else:
+    lab_text = AI_LAB.read_text(encoding="utf-8")
+    for token in ('<title>NEMO AI LAB</title>', 'fonts.googleapis.com', 'Cormorant Garamond', 'DM Sans', 'class="lab-grid"', 'In development'):
+        if token not in lab_text:
+            fail(f"ai-lab.html missing required token: {token}")
 
 for template in TEMPLATES:
     if not template.exists():
