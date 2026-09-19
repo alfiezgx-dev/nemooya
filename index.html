@@ -18,185 +18,578 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="NEMO OYA — Food & A Sweeter Life">
 <meta name="twitter:description" content="Quick meals, healthy light meals, atmospheric cocktails and life aesthetics.">
+<meta name="twitter:image" content="https://nemooya.pages.dev/assets/hero.webp">
 <title>NEMO OYA — Food & A Sweeter Life</title>
 <style>
 :root{
-  --ink:#6b342f;--ink2:#8f625c;--paper:#fffaf4;--cream:#fff5eb;
-  --rose:#e89c9b;--rose2:#f5c9ca;--butter:#f5d88f;--sage:#dce7d2;
-  --peach:#f5ddce;--line:rgba(107,52,47,.16);--shadow:0 14px 34px rgba(105,59,53,.12);
-  --font-display:var(--font-display);
+  --ink:#6b342f;
+  --ink-soft:#8f625c;
+  --paper:#fffaf4;
+  --cream:#fff5eb;
+  --blush:#f5c9ca;
+  --rose:#e89c9b;
+  --sage:#dce7d2;
+  --butter:#f5d88f;
+  --peach:#f5ddce;
+  --line:rgba(107,52,47,.16);
+  --line-strong:rgba(107,52,47,.28);
+  --shadow:0 18px 45px rgba(88,50,44,.10);
+  --font-display:Georgia,"Times New Roman",serif;
   --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --font-cjk:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-  --header-height:68px;--radius-card:28px;--radius-soft:18px;--radius-pill:999px;
-  --space-1:8px;--space-2:12px;--space-3:16px;--space-4:24px;--space-5:32px;
+  --header-height:72px;
+  --page:1220px;
+  --radius:28px;
+  --radius-sm:18px;
+  --pill:999px;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:var(--font-body);background:
-radial-gradient(circle at 10% 5%,rgba(245,216,143,.2),transparent 24%),
-radial-gradient(circle at 88% 12%,rgba(245,201,202,.32),transparent 25%),
-linear-gradient(180deg,#fffaf4,#fffdf9 50%,#fff8f1)}
-body:before{content:"";position:fixed;inset:0;z-index:-1;opacity:.22;pointer-events:none;background-image:radial-gradient(rgba(107,52,47,.14) .55px,transparent .55px);background-size:7px 7px}
-a{color:inherit;text-decoration:none}[data-status="draft"]{display:none!important}section[id],article[id]{scroll-margin-top:calc(var(--header-height) + 20px)}.wrap{width:min(1220px,calc(100% - 34px));margin:auto}.serif{font-family:var(--font-display)}.script{font-family:var(--font-display);font-style:italic}.caps{text-transform:uppercase;letter-spacing:.16em;font-size:.67rem;font-weight:800}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:var(--font-body);
+  background:
+    radial-gradient(circle at 10% 8%,rgba(245,216,143,.13),transparent 21%),
+    radial-gradient(circle at 90% 12%,rgba(245,201,202,.20),transparent 24%),
+    var(--paper);
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.22;
+  background-image:radial-gradient(rgba(107,52,47,.12) .55px,transparent .55px);
+  background-size:7px 7px;
+}
+*::selection{background:var(--blush);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+[data-status="draft"]{display:none!important}
+section[id],article[id]{scroll-margin-top:calc(var(--header-height) + 18px)}
+.wrap{width:min(var(--page),calc(100% - 36px));margin-inline:auto}
+.display{font-family:var(--font-display)}
+.script{font-family:var(--font-display);font-style:italic}
+.eyebrow{text-transform:uppercase;letter-spacing:.17em;font-size:.69rem;font-weight:800}
+.cn{font-family:var(--font-cjk)}
 
-header{position:sticky;top:0;z-index:30;background:rgba(255,250,244,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(107,52,47,.09)}
-.nav{height:var(--header-height);display:grid;grid-template-columns:1fr auto 1fr;align-items:center}.nav-brand{font:700 1rem var(--font-display);letter-spacing:.11em}.links{display:flex;gap:22px;font:400 .79rem var(--font-display)}.links a{padding:9px 0;border-bottom:2px solid transparent}.links a:hover{border-color:var(--rose)}.ig{justify-self:end;border:1px solid var(--ink);border-radius:var(--radius-pill);padding:9px 14px;font-size:.74rem}
+header{
+  position:sticky;
+  top:0;
+  z-index:40;
+  background:rgba(255,250,244,.91);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(107,52,47,.09);
+}
+.nav{
+  min-height:var(--header-height);
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:24px;
+  align-items:center;
+}
+.brand{
+  font:700 1.08rem/1 var(--font-display);
+  letter-spacing:.12em;
+}
+.links{display:flex;gap:26px;align-items:center;font:400 .83rem/1 var(--font-display)}
+.links a{padding:10px 0;border-bottom:1px solid transparent}
+.links a:hover{border-color:var(--ink)}
+.social-top{
+  justify-self:end;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:9px 14px;
+  border:1px solid var(--line-strong);
+  border-radius:var(--pill);
+  font-size:.76rem;
+}
+.social-top:hover{background:#fff}
 
-.mast{text-align:center;padding:26px 0 20px;position:relative}.mast h1{font:400 clamp(3.6rem,6.2vw,6.25rem)/.92 var(--font-display);letter-spacing:-.045em;margin:0;color:#74372f}.mast p{font:italic 1rem/1.25 var(--font-display);color:var(--rose);margin:11px 0 0}.spark{position:absolute;color:#d6a044;font-size:1.7rem}.sp1{left:13%;top:62px}.sp2{right:14%;top:79px}.bow{width:76px;height:36px;margin:0 auto 4px;position:relative}.bow:before,.bow:after{content:"";position:absolute;top:5px;width:34px;height:24px;border:4px solid var(--rose);border-radius:70% 35% 70% 35%;background:#fff4ef}.bow:before{left:2px;transform:rotate(16deg)}.bow:after{right:2px;transform:scaleX(-1) rotate(16deg)}.bow i{position:absolute;left:31px;top:12px;width:15px;height:15px;border-radius:50%;background:var(--rose);z-index:2}
+/* Editorial hero */
+.hero-editorial{
+  margin-top:24px;
+  display:grid;
+  grid-template-columns:43% 57%;
+  min-height:620px;
+  border:1px solid var(--line);
+  border-radius:32px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  background:#fff;
+}
+.hero-copy{
+  position:relative;
+  padding:66px 58px 54px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:
+    radial-gradient(circle at 82% 12%,rgba(245,216,143,.38),transparent 22%),
+    linear-gradient(145deg,#f8dedb,#fff1e8 68%,#fff7ec);
+}
+.hero-copy:after{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border:1px dashed rgba(107,52,47,.16);
+  border-radius:22px;
+  pointer-events:none;
+}
+.hero-brandline{position:relative;z-index:2;margin-bottom:27px;color:var(--ink-soft)}
+.hero-title{
+  position:relative;
+  z-index:2;
+  margin:0;
+  max-width:490px;
+  font:400 clamp(3.5rem,5.25vw,5.65rem)/.91 var(--font-display);
+  letter-spacing:-.045em;
+}
+.hero-title em{
+  position:relative;
+  font-weight:400;
+  color:#8c4c48;
+}
+.hero-title em:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-5px;
+  height:3px;
+  background:var(--rose);
+  transform:rotate(-1.4deg);
+  border-radius:10px;
+}
+.hero-sub{
+  position:relative;
+  z-index:2;
+  max-width:420px;
+  margin:28px 0 0;
+  color:var(--ink-soft);
+  font-size:1rem;
+  line-height:1.65;
+}
+.hero-actions{position:relative;z-index:2;display:flex;align-items:center;gap:18px;margin-top:32px}
+.primary-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 19px;
+  background:var(--sage);
+  border:1px solid rgba(107,52,47,.11);
+  border-radius:var(--pill);
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.05em;
+}
+.primary-btn:hover{transform:translateY(-1px)}
+.hero-note{font:italic .9rem/1.2 var(--font-display);color:var(--rose)}
+.hero-spark{position:absolute;z-index:2;color:#c9952a;font-size:1.55rem}
+.hero-spark.one{top:40px;right:44px}
+.hero-spark.two{bottom:48px;left:40px}
+.hero-photo{
+  position:relative;
+  min-height:620px;
+  background:linear-gradient(150deg,var(--sage),#f3ded6);
+  overflow:hidden;
+}
+.hero-photo img{
+  width:100%;
+  height:100%;
+  min-height:620px;
+  display:block;
+  object-fit:cover;
+  object-position:center 34%;
+}
+.hero-photo:after{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(255,255,255,.72);
+  border-radius:22px;
+  pointer-events:none;
+}
+.bow-mark{
+  position:absolute;
+  z-index:3;
+  width:88px;
+  height:52px;
+  top:22px;
+  left:24px;
+}
+.bow-mark:before,.bow-mark:after{
+  content:"";
+  position:absolute;
+  top:8px;
+  width:37px;
+  height:27px;
+  border:4px solid var(--rose);
+  border-radius:68% 34% 68% 34%;
+  background:rgba(255,245,235,.78);
+}
+.bow-mark:before{left:2px;transform:rotate(14deg)}
+.bow-mark:after{right:2px;transform:scaleX(-1) rotate(14deg)}
+.bow-mark i{
+  position:absolute;
+  z-index:2;
+  left:36px;
+  top:16px;
+  width:17px;
+  height:17px;
+  border-radius:50%;
+  background:var(--rose);
+}
 
-.hero-grid{display:grid;grid-template-columns:320px minmax(400px,430px) 320px;grid-template-areas:"quick hero cocktail" "healthy hero life";gap:14px;align-items:stretch;justify-content:center;max-width:1110px}
-.paper{position:relative;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden;background:#fffaf4}
-.paper:after{content:"";position:absolute;inset:8px;border:1px dashed rgba(107,52,47,.14);border-radius:20px;pointer-events:none;z-index:4}
-.photo-card{width:320px;min-height:285px;border-radius:var(--radius-card);display:flex;align-items:flex-end;padding:20px;position:relative;isolation:isolate}
-.quick{grid-area:quick}.healthy{grid-area:healthy}.cocktail{grid-area:cocktail}.life{grid-area:life}
-.card-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}.healthy .card-photo{object-position:center 45%}.semantic-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;background:radial-gradient(circle at 35% 25%,rgba(255,255,255,.78),transparent 28%),linear-gradient(145deg,#eee5dc,#e5eadb 54%,#f1d9d6);color:rgba(107,52,47,.68);letter-spacing:.12em}.semantic-placeholder strong{font:600 .92rem/1.2 var(--font-display);letter-spacing:.04em}.semantic-placeholder small{font-size:.62rem;letter-spacing:.16em}.placeholder-mark{font-size:2.2rem;color:rgba(107,52,47,.34)}.feature-photo-img.semantic-placeholder{display:flex}.note-placeholder{height:142px}.photo-card:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(49,21,18,.38),rgba(49,21,18,.02) 62%);z-index:1}.label{position:relative;z-index:2;width:min(92%,250px);background:rgba(255,248,239,.94);border:1px solid rgba(107,52,47,.13);border-radius:18px;padding:15px 16px;box-shadow:0 8px 18px rgba(72,36,31,.12);transform:rotate(-1.4deg)}
-.healthy .label,.life .label{transform:rotate(1.1deg)}.label h2{font:400 1.62rem/1.02 var(--font-display);margin:0 0 7px;letter-spacing:-.02em}.label .cn{font:500 .82rem/1.35 var(--font-cjk);color:var(--ink2)}.label small{display:block;margin-top:9px;line-height:1.35;color:var(--ink2)}
-.stamp{position:absolute;z-index:3;top:14px;right:14px;background:#fff9ef;border:1px solid var(--line);border-radius:var(--radius-pill);padding:8px 10px;font:700 .66rem var(--font-display);box-shadow:0 6px 16px rgba(82,44,37,.12);transform:rotate(6deg)}
+/* Category editorial grid */
+.explore{padding:76px 0 72px}
+.section-intro{text-align:center;max-width:720px;margin:0 auto 35px}
+.section-intro h2{margin:7px 0 0;font:400 clamp(2.35rem,4vw,3.65rem)/1 var(--font-display);letter-spacing:-.035em}
+.section-intro p{margin:14px auto 0;color:var(--ink-soft);line-height:1.6}
+.category-grid{
+  width:min(1040px,100%);
+  margin-inline:auto;
+  display:grid;
+  grid-template-columns:repeat(3,320px);
+  justify-content:center;
+  gap:30px;
+}
+.category{
+  min-width:0;
+  border-top:1px solid var(--line-strong);
+  padding-top:13px;
+}
+.category-media{
+  position:relative;
+  width:320px;
+  height:300px;
+  overflow:hidden;
+  border-radius:22px;
+  background:var(--cream);
+}
+.category-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.category.quick .category-media img{object-position:center 38%}
+.category.healthy .category-media img{object-position:center 43%}
+.category.cocktail .category-media img{object-position:center}
+.category-index{
+  position:absolute;
+  top:13px;
+  left:13px;
+  min-width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:rgba(255,250,244,.92);
+  border:1px solid var(--line);
+  font:700 .73rem/1 var(--font-display);
+}
+.category-copy{padding:18px 4px 0}
+.category-copy h3{margin:0;font:400 2rem/1 var(--font-display);letter-spacing:-.025em}
+.category-copy .cn{display:block;margin-top:8px;font-size:.84rem;color:var(--ink-soft)}
+.category-copy p{margin:12px 0 0;color:var(--ink-soft);font-size:.91rem;line-height:1.55}
+.text-link{display:inline-flex;margin-top:14px;padding-bottom:3px;border-bottom:1px solid var(--ink);font-size:.76rem;font-weight:800;letter-spacing:.05em}
 
-.hero{grid-area:hero;min-height:560px;display:grid;place-items:center;padding:16px 0;overflow:visible}
-.frame{position:relative;width:430px;height:540px;min-height:540px;padding:12px;border-radius:46% 46% 29% 29%/27% 27% 16% 16%;background:linear-gradient(145deg,#f0aaa9,#fff0e6 52%,#dce7d2);box-shadow:0 24px 54px rgba(111,62,55,.18)}
-.frame:before{content:"";position:absolute;inset:8px;border:2px solid rgba(255,255,255,.76);border-radius:inherit;z-index:3}.frame img{width:100%;height:100%;object-fit:cover;object-position:center 36%;border-radius:44% 44% 27% 27%/26% 26% 15% 15%;display:block}
-.ribbon{position:absolute;z-index:6;top:-28px;left:50%;transform:translateX(-50%);width:122px;height:70px}.ribbon:before,.ribbon:after{content:"";position:absolute;top:18px;width:53px;height:34px;border:7px solid #e99aa0;border-radius:68% 30% 68% 30%;background:#fff0e7}.ribbon:before{left:0;transform:rotate(15deg)}.ribbon:after{right:0;transform:scaleX(-1) rotate(15deg)}.ribbon i{position:absolute;left:49px;top:25px;width:24px;height:24px;border-radius:50%;background:#e99aa0;z-index:2}
-.note{position:absolute;z-index:7;background:#fff4e9;border:1px solid var(--line);box-shadow:0 8px 18px rgba(91,47,43,.11);font:italic .88rem/1.28 var(--font-display)}.heart-note{left:-13px;top:180px;width:114px;padding:18px 12px;border-radius:49%;background:#f7c5c7;text-align:center;transform:rotate(-5deg)}.bubble{right:-8px;bottom:78px;padding:14px 18px;border-radius:50%;transform:rotate(5deg);text-align:center}
-.cat-peek{position:absolute;z-index:8;right:9px;bottom:-8px;width:88px;height:70px;background:#fff6ea;border:2px solid #dcb9ab;border-radius:54% 54% 44% 44%;box-shadow:0 7px 16px rgba(91,47,43,.12)}.cat-peek:before,.cat-peek:after{content:"";position:absolute;top:-17px;width:28px;height:30px;background:#fff6ea;border:2px solid #dcb9ab;transform:rotate(45deg);z-index:-1}.cat-peek:before{left:8px}.cat-peek:after{right:8px}.eyes{position:absolute;top:27px;left:21px;width:8px;height:10px;border-radius:50%;background:#72504a;box-shadow:37px 0 0 #72504a}.nose{position:absolute;top:43px;left:40px;width:8px;height:6px;border-radius:50%;background:#e4a4a2}
+/* Life editorial */
+.life-editorial{
+  display:grid;
+  grid-template-columns:62% 38%;
+  min-height:540px;
+  border:1px solid var(--line);
+  border-radius:32px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  background:#fff;
+}
+.life-photo{position:relative;min-height:540px;overflow:hidden}
+.life-photo img{width:100%;height:100%;min-height:540px;object-fit:cover;object-position:center 47%;display:block}
+.life-photo:after{
+  content:"LONDON";
+  position:absolute;
+  left:22px;
+  bottom:20px;
+  padding:8px 12px;
+  background:rgba(255,250,244,.88);
+  border:1px solid var(--line);
+  border-radius:var(--pill);
+  font:700 .66rem/1 var(--font-display);
+  letter-spacing:.14em;
+}
+.life-copy{
+  position:relative;
+  padding:60px 50px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(245,201,202,.36),transparent 24%),
+    linear-gradient(145deg,#e7eedf,#f7f1e8);
+}
+.life-copy h2{margin:9px 0 0;font:400 clamp(3rem,4.5vw,4.5rem)/.92 var(--font-display);letter-spacing:-.045em}
+.life-copy .cn{margin-top:13px;color:var(--ink-soft);font-size:.92rem}
+.life-copy p{max-width:390px;margin:24px 0 0;color:var(--ink-soft);line-height:1.68}
+.mood-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.mood-list span{
+  padding:8px 11px;
+  border:1px solid rgba(107,52,47,.13);
+  border-radius:var(--pill);
+  background:rgba(255,250,244,.68);
+  font-size:.69rem;
+}
+.life-sticker{
+  margin-top:28px;
+  align-self:flex-start;
+  padding:12px 15px;
+  border:1px solid var(--line);
+  background:#fff8ef;
+  box-shadow:0 8px 18px rgba(88,50,44,.07);
+  transform:rotate(-2deg);
+  font:italic .96rem/1.2 var(--font-display);
+}
 
-.promise{margin:26px 0;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}.promise h3{font:400 clamp(1.4rem,2.35vw,2.1rem)/1.23 var(--font-display);margin:0}.promise p{margin:7px 0 0;color:var(--rose);font-size:1.06rem}
+/* About */
+.about-band{padding:74px 0 68px}
+.about-shell{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:0;
+  border-top:1px solid var(--line-strong);
+  border-bottom:1px solid var(--line-strong);
+}
+.about-heading{
+  padding:52px 48px 52px 0;
+  border-right:1px solid var(--line);
+}
+.about-heading h2{margin:8px 0 0;font:400 clamp(3rem,5vw,4.9rem)/.94 var(--font-display);letter-spacing:-.04em}
+.about-heading .script{display:block;margin-top:18px;color:var(--rose);font-size:1.02rem}
+.about-copy{padding:52px 0 52px 52px}
+.about-copy p{margin:0;max-width:640px;color:var(--ink-soft);font-size:1rem;line-height:1.78}
+.about-copy p+p{margin-top:18px}
+.about-signature{display:flex;align-items:center;gap:12px;margin-top:26px}
+.about-signature:before{content:"✦";color:#c9952a}
+.about-signature span{font:italic .95rem/1 var(--font-display)}
 
-.mid{display:grid;grid-template-columns:1fr;gap:16px;align-items:start}.featured,.about{border-radius:var(--radius-card);padding:26px}.featured{background:#fff7ee;align-self:start}.about{background:#fff9f5;align-self:start}.section-title{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:17px}.section-title h2{font:400 2.08rem/1 var(--font-display);margin:0}.section-title small{color:var(--ink2)}
-.feature-body{display:grid;grid-template-columns:300px 1fr;gap:20px;align-items:center}.feature-photo-img{display:block;width:300px;height:285px;object-fit:cover;border-radius:22px;box-shadow:inset 0 0 0 9px rgba(255,255,255,.36)}.feature-copy .tag{display:inline-block;background:#fff7ea;border:1px solid var(--line);padding:7px 10px;border-radius:10px;font:700 .78rem var(--font-display);transform:rotate(-2deg)}.feature-copy h3{font:400 1.9rem/1.05 var(--font-display);margin:12px 0}.feature-copy p,.about p{font-size:.92rem;line-height:1.62;color:var(--ink2)}.btn{display:inline-flex;padding:11px 16px;border-radius:var(--radius-pill);background:var(--rose2);font-size:.76rem;font-weight:800}
-.about-top{display:grid;grid-template-columns:1fr 112px;gap:16px;align-items:start}.about-polaroid{background:#fff;padding:7px 7px 18px;border:1px solid var(--line);box-shadow:0 10px 22px rgba(95,57,48,.11);transform:rotate(4deg)}.about-photo{display:block;width:100%;height:98px;object-fit:cover;object-position:center 32%}.about .script{display:block;font:italic 1.05rem/1.3 var(--font-display);color:var(--rose);margin:10px 0 16px}
+/* Social CTA */
+.social-band{padding-bottom:34px}
+.social-card{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:28px;
+  padding:30px 34px;
+  border-radius:24px;
+  border:1px solid var(--line);
+  background:linear-gradient(135deg,#fff8f4,#f4e4df);
+}
+.social-card h3{margin:6px 0 0;font:400 2rem/1 var(--font-display)}
+.social-card p{margin:10px 0 0;color:var(--ink-soft)}
+.follow-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border-radius:var(--pill);
+  color:#fff;
+  background:var(--ink);
+  font-size:.8rem;
+  font-weight:800;
+}
+.follow-btn:hover{opacity:.9}
 
-.bottom{display:grid;grid-template-columns:1fr;gap:16px;margin:18px 0 28px;align-items:start}.panel{border-radius:27px;padding:24px;min-height:0;align-self:start}.notes{background:#fffaf6}.newsletter{background:#fff2f1}.moments{background:#f8fbf4}.panel h3{font:400 1.5rem/1 var(--font-display);margin:0 0 16px}
-.note-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.note-card{background:#fff;border:1px solid var(--line);padding:7px;border-radius:13px}.note-img{display:block;width:100%;height:142px;object-fit:cover;object-position:center;border-radius:9px}.note-card b{display:block;font:600 .78rem/1.28 var(--font-display);margin-top:8px}.note-card span{font-size:.65rem;color:#9a7c74}
-.signup{display:flex;border:1px solid var(--line);border-radius:var(--radius-pill);background:#fff;overflow:hidden;margin:17px 0 10px}.signup input{min-width:0;flex:1;border:0;outline:0;padding:12px 14px}.signup button{border:0;background:var(--rose);color:white;font-weight:800;padding:0 15px}.newsletter p{color:var(--ink2);line-height:1.55}.newsletter .script{text-align:center;color:var(--rose);font-size:1.06rem;margin-top:28px}
-.instagram-follow{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;background:linear-gradient(135deg,#fff9f5,#f8eee8)}.instagram-follow p{margin:7px 0 0;color:var(--ink2);line-height:1.55}.follow-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:var(--radius-pill);background:var(--ink);color:#fff;font-weight:800;font-size:.82rem;white-space:nowrap}.follow-btn:hover{opacity:.9}
+footer{border-top:1px solid var(--line);padding:27px 0 34px}
+.footer-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.footer-brand{font:700 1.05rem/1 var(--font-display);letter-spacing:.1em}
+.footer-tag{font-size:.76rem;color:var(--ink-soft)}
+.footer-right{justify-self:end;font-size:.73rem;color:var(--ink-soft)}
 
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-footer{border-top:1px solid var(--line);padding:27px 0 34px}.foot{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}.fbrand{font:700 1.18rem var(--font-display);letter-spacing:.09em}.ftag{font-size:.76rem;color:var(--ink2)}.fright{justify-self:end;font-size:.73rem;color:var(--ink2)}
-@media(max-width:960px){.links{display:none}.nav{grid-template-columns:1fr 1fr}.hero-grid{grid-template-columns:1fr 1fr;grid-template-areas:"hero hero" "quick cocktail" "healthy life"}.hero{min-height:590px}.frame{width:min(100%,490px)}.mid,.bottom{grid-template-columns:1fr}.feature-body{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.instagram-follow{grid-template-columns:1fr}.follow-btn{justify-self:start}.wrap{width:calc(100% - 22px)}.mast{padding-top:27px}.mast h1{font-size:3.6rem}.hero-grid{grid-template-columns:320px;grid-template-areas:"hero" "quick" "healthy" "cocktail" "life";gap:12px;justify-content:center}.hero{min-height:500px;padding:16px 0}.frame{width:320px;height:455px;min-height:455px}.heart-note{left:-2px;top:176px;transform:scale(.83) rotate(-5deg)}.bubble{right:-2px;bottom:60px;transform:scale(.86) rotate(5deg)}.photo-card{width:320px;min-height:270px}.mid,.bottom{gap:13px}.featured,.about,.panel{padding:20px}.feature-body{grid-template-columns:1fr}.feature-photo-img{width:100%;max-width:320px;height:285px}.note-grid{grid-template-columns:1fr 1fr}.note-card:nth-child(3){display:none}.foot{grid-template-columns:1fr}.ftag,.fright{display:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+@media(max-width:1000px){
+  .links{display:none}
+  .nav{grid-template-columns:1fr 1fr}
+  .hero-editorial{grid-template-columns:1fr 1fr}
+  .hero-copy{padding:50px 38px}
+  .category-grid{grid-template-columns:repeat(3,30%);gap:24px}
+  .category-media{width:100%;height:280px}
+  .life-copy{padding:46px 34px}
+}
+@media(max-width:720px){
+  :root{--header-height:66px}
+  .wrap{width:calc(100% - 24px)}
+  .hero-editorial{margin-top:12px;grid-template-columns:1fr;min-height:0;border-radius:24px}
+  .hero-copy{padding:48px 28px 42px;min-height:430px}
+  .hero-title{font-size:clamp(3.25rem,15vw,4.7rem)}
+  .hero-sub{font-size:.94rem}
+  .hero-photo{min-height:470px}
+  .hero-photo img{min-height:470px;object-position:center 30%}
+  .hero-spark.one{right:26px}
+  .hero-spark.two{left:24px}
+  .explore{padding:58px 0}
+  .section-intro{text-align:left;margin-bottom:28px}
+  .category-grid{grid-template-columns:320px;gap:38px}
+  .category-media{width:320px;height:300px}
+  .category{width:320px}
+  .life-editorial{grid-template-columns:1fr;border-radius:24px;min-height:0}
+  .life-photo,.life-photo img{min-height:360px;height:360px}
+  .life-photo img{object-position:center}
+  .life-copy{padding:42px 28px}
+  .life-copy h2{font-size:3.3rem}
+  .about-band{padding:58px 0}
+  .about-shell{grid-template-columns:1fr}
+  .about-heading{padding:0 0 32px;border-right:0;border-bottom:1px solid var(--line)}
+  .about-copy{padding:32px 0 0}
+  .social-card{grid-template-columns:1fr;padding:26px}
+  .follow-btn{justify-self:start}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-tag,.footer-right{display:none}
+}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
-    <a class="nav-brand" href="#top">NEMO OYA</a>
-    <nav class="links">
-      <a href="#quick">Quick Meals</a>
+    <a class="brand" href="#top">NEMO OYA</a>
+    <nav class="links" aria-label="Primary navigation">
+      <a href="#explore">Recipes</a>
       <a href="#healthy">Healthy</a>
       <a href="#cocktails">Cocktails</a>
-      <a href="#life">Life Aesthetics</a>
+      <a href="#life">Life</a>
       <a href="#about">About</a>
     </nav>
-    <a class="ig" href="https://www.instagram.com/nemo_oya/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+    <a class="social-top" href="https://www.instagram.com/nemo_oya/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
   </div>
 </header>
 
 <main id="top">
-  <section class="wrap mast">
-    <span class="spark sp1">✦</span><span class="spark sp2">✧</span>
-    <div class="bow"><i></i></div>
-    <h1>NEMO OYA</h1>
-    <p class="script">Good Food · A Sweeter Life · With You ♡</p>
-  </section>
-
-  <section class="wrap hero-grid">
-    <article id="quick" class="paper photo-card quick"><img class="card-photo" data-qa="content-image" src="assets/quick.webp" width="492" height="674" loading="lazy" decoding="async" alt="NEMO OYA quick meal post">
-      <span class="stamp">30 MIN ♡</span>
-      <div class="label"><div class="caps">Food · 01</div><h2>30-Minute<br>Quick Meals</h2><div class="cn">30分钟快手饭 →</div><small>Fast, cosy dishes made for real weeknights.</small></div>
-    </article>
-
-    <article class="hero">
-      <div class="frame">
-        <div class="ribbon"><i></i></div>
-        <img data-qa="hero" src="assets/hero.webp" width="900" height="1100" fetchpriority="high" decoding="async" alt="NEMO OYA creator portrait">
-        <div class="note heart-note">Eat Well<br>Live Gently<br>Be Happy ♡</div>
-        <div class="note bubble">welcome to<br>my little world ♡</div>
-        <div class="cat-peek"><i class="eyes"></i><i class="nose"></i></div>
+  <section class="wrap hero-editorial" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <span class="hero-spark one" aria-hidden="true">✦</span>
+      <span class="hero-spark two" aria-hidden="true">✧</span>
+      <div class="hero-brandline eyebrow">Food · Drinks · Life</div>
+      <h1 id="hero-title" class="hero-title">GOOD FOOD.<br>PRETTY DRINKS.<br><em>SOFTER DAYS.</em></h1>
+      <p class="hero-sub">Quick recipes, atmospheric drinks and little everyday joys — a small world made for eating well and living gently.</p>
+      <div class="hero-actions">
+        <a class="primary-btn" href="#explore">EXPLORE RECIPES →</a>
+        <span class="hero-note">made with love ♡</span>
       </div>
-    </article>
-
-    <article id="cocktails" class="paper photo-card cocktail"><img class="card-photo" data-qa="content-image" src="assets/cocktail.webp" width="491" height="674" loading="lazy" decoding="async" alt="NEMO OYA cocktail post">
-      <span class="stamp">CHEERS ✦</span>
-      <div class="label"><div class="caps">Drinks · 03</div><h2>Atmospheric<br>Cocktails</h2><div class="cn">氛围感调酒 →</div><small>Pretty drinks, small rituals and better nights.</small></div>
-    </article>
-
-    <article id="healthy" class="paper photo-card healthy"><img class="card-photo" data-qa="content-image" src="assets/healthy-fitness.webp" width="941" height="2048" loading="lazy" decoding="async" alt="NEMO OYA healthy fitness meal with shrimp and avocado">
-      <span class="stamp">LIGHT & HAPPY</span>
-      <div class="label"><div class="caps">Food · 02</div><h2>Healthy<br>Light Meals</h2><div class="cn">健康减脂餐 →</div><small>Lighter food without losing the joy.</small></div>
-    </article>
-
-    <article id="life" class="paper photo-card life"><div class="card-photo semantic-placeholder life-placeholder" role="img" aria-label="Life aesthetics photography placeholder"><span class="placeholder-mark" aria-hidden="true">✦</span></div>
-      <span class="stamp">LITTLE JOYS ♡</span>
-      <div class="label"><div class="caps">Mood · 04</div><h2>Life<br>Aesthetics</h2><div class="cn">生活美学 →</div><small>Food, objects, city moments, travel light and everyday beauty.</small></div>
-    </article>
-  </section>
-
-  <section class="promise">
-    <div class="wrap">
-      <h3>Small recipes, pretty drinks, softer days — all in one little world.</h3>
-      <p class="script">collecting delicious moments, one page at a time ♡</p>
+    </div>
+    <div class="hero-photo">
+      <div class="bow-mark" aria-hidden="true"><i></i></div>
+      <img data-qa="hero" src="assets/hero.webp" width="1000" height="1330" fetchpriority="high" decoding="async" alt="NEMO OYA creator portrait">
     </div>
   </section>
 
-  <section class="wrap mid">
-    <article class="paper featured" data-status="draft">
-      <div class="section-title"><div><div class="caps">This week</div><h2>Featured Recipe</h2></div><small>本周推荐</small></div>
-      <div class="feature-body">
-        <div class="feature-photo-img semantic-placeholder" role="img" aria-label="Featured recipe photography placeholder"><strong>Featured Recipe</strong><small>RECIPE IMAGE</small></div>
-        <div class="feature-copy">
-          <span class="tag">Healthy Light Meal · 健康减脂餐</span>
-          <h3>Simple ingredients.<br>Extra happiness.</h3>
-          <p>Fresh, colourful and realistic — a lighter meal that still feels generous and satisfying.</p>
-          <span class="btn">Full recipe coming soon →</span>
+  <section id="explore" class="wrap explore" aria-labelledby="explore-title">
+    <div class="section-intro">
+      <div class="eyebrow">Choose your mood</div>
+      <h2 id="explore-title">What are you in the mood for?</h2>
+      <p>Three ways into the NEMO OYA kitchen — quick, lighter or a little more atmospheric.</p>
+    </div>
+    <div class="category-grid">
+      <article id="quick" class="category quick">
+        <div class="category-media">
+          <img data-qa="content-image" src="assets/quick.webp" width="492" height="674" loading="lazy" decoding="async" alt="Quick meal by NEMO OYA">
+          <span class="category-index">01</span>
         </div>
-      </div>
-    </article>
+        <div class="category-copy">
+          <h3>30-Minute Meals</h3>
+          <span class="cn">30分钟快手饭</span>
+          <p>Easy, cosy food for busy days — fast enough for a weeknight, pretty enough to look forward to.</p>
+          <span class="text-link">EXPLORE QUICK MEALS →</span>
+        </div>
+      </article>
 
-    <article id="about" class="paper about">
-      <div class="section-title"><div><div class="caps">Story</div><h2>About Me</h2></div><small>关于我</small></div>
-      <div class="about-top">
-        <div>
-          <p>Hi, I’m NEMO OYA. I make quick meals, lighter plates and atmospheric drinks, and I collect the small details that make everyday life feel special.</p>
-          <span class="script">good food, softer days ♡</span>
-          <p>This site brings those ideas together beyond the feed — a growing archive of recipes, drinks and everyday aesthetics.</p>
+      <article id="healthy" class="category healthy">
+        <div class="category-media">
+          <img data-qa="content-image" src="assets/healthy-fitness.webp" width="941" height="2048" loading="lazy" decoding="async" alt="Healthy shrimp and avocado meal by NEMO OYA">
+          <span class="category-index">02</span>
         </div>
-      </div>
-    </article>
+        <div class="category-copy">
+          <h3>Healthy & Light</h3>
+          <span class="cn">健康减脂餐</span>
+          <p>Fresh, satisfying plates that feel lighter without turning food into homework.</p>
+          <span class="text-link">EAT A LITTLE LIGHTER →</span>
+        </div>
+      </article>
+
+      <article id="cocktails" class="category cocktail">
+        <div class="category-media">
+          <img data-qa="content-image" src="assets/cocktail-editorial.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Candlelit sparkling cocktail with rose garnish">
+          <span class="category-index">03</span>
+        </div>
+        <div class="category-copy">
+          <h3>Atmospheric Cocktails</h3>
+          <span class="cn">氛围感调酒</span>
+          <p>Pretty drinks, candlelight and simple rituals for nights that deserve a little more atmosphere.</p>
+          <span class="text-link">POUR SOMETHING PRETTY →</span>
+        </div>
+      </article>
+    </div>
   </section>
 
-  <section class="wrap bottom">
-    <article class="paper panel notes" data-status="draft">
-      <h3>Latest Notes</h3>
-      <div class="note-grid">
-        <div class="note-card"><div class="note-img semantic-placeholder note-placeholder" role="img" aria-label="Quick meal note image placeholder"><small>QUICK MEAL NOTE</small></div><b>30分钟快手饭：好吃也可以很轻松</b><span>Coming soon</span></div>
-        <div class="note-card"><div class="note-img semantic-placeholder note-placeholder" role="img" aria-label="Life aesthetics note image placeholder"><small>LIFE AESTHETICS NOTE</small></div><b>生活美学：把普通一天过得更可爱</b><span>Coming soon</span></div>
-        <div class="note-card"><div class="note-img semantic-placeholder note-placeholder" role="img" aria-label="Cocktail note image placeholder"><small>COCKTAIL NOTE</small></div><b>Some nights deserve a prettier drink</b><span>Coming soon</span></div>
+  <section id="life" class="wrap life-editorial" aria-labelledby="life-title">
+    <div class="life-photo">
+      <img data-qa="content-image" src="assets/life-london.webp" width="1440" height="900" loading="lazy" decoding="async" alt="NEMO OYA on a colourful London street">
+    </div>
+    <div class="life-copy">
+      <div class="eyebrow">Beyond the kitchen</div>
+      <h2 id="life-title">Life<br>Aesthetics</h2>
+      <div class="cn">生活美学</div>
+      <p>Little joys, colourful streets, quiet corners and beautiful ordinary days. The things that make life feel softer — even when nothing extraordinary is happening.</p>
+      <div class="mood-list" aria-label="Life aesthetics themes">
+        <span>London</span><span>Cafés</span><span>Little Objects</span><span>City Walks</span><span>Evenings</span>
       </div>
-    </article>
+      <div class="life-sticker">little joys matter ♡</div>
+    </div>
+  </section>
 
-    <article class="paper panel newsletter" data-status="draft">
-      <h3>Join My Newsletter</h3>
-      <p>和我一起，发现更美味、更可爱，也更有氛围感的生活。</p>
-      <div class="signup"><input placeholder="Your email address" disabled><button disabled>Subscribe ♡</button></div>
-      <small>Newsletter signup will be activated later.</small>
-      <p class="script">good food, good mood, to your inbox ♡</p>
-    </article>
+  <section id="about" class="wrap about-band" aria-labelledby="about-title">
+    <div class="about-shell">
+      <div class="about-heading">
+        <div class="eyebrow">Story</div>
+        <h2 id="about-title">HI, I’M<br>NEMO.</h2>
+        <span class="script">good food, softer days ♡</span>
+      </div>
+      <div class="about-copy">
+        <p>I make quick meals, lighter plates and atmospheric drinks, and I collect the small details that make everyday life feel special.</p>
+        <p>NEMO OYA is where those ideas live beyond the feed — a growing archive of recipes, drinks and everyday aesthetics, made with a little softness and a lot of appetite.</p>
+        <div class="about-signature"><span>same girl, bigger little world.</span></div>
+      </div>
+    </div>
+  </section>
 
-    <article class="paper panel instagram-follow">
+  <section class="wrap social-band">
+    <div class="social-card">
       <div>
-        <div class="caps">Social</div>
+        <div class="eyebrow">Social</div>
         <h3>Follow on Instagram</h3>
         <p>Recipes, drinks and everyday moments are posted there first.</p>
       </div>
       <a class="follow-btn" href="https://www.instagram.com/nemo_oya/" target="_blank" rel="noopener noreferrer" aria-label="Follow NEMO OYA on Instagram">@nemo_oya ↗</a>
-    </article>
+    </div>
+  </section>
+
+  <section data-status="draft" aria-hidden="true">
+    <article class="featured"><h2>Featured Recipe</h2><p>Coming soon</p></article>
+    <article class="newsletter"><h2>Newsletter</h2><p>Coming soon</p></article>
   </section>
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <div class="fbrand">NEMO OYA ♡</div>
-    <div class="ftag">Good Food · A Sweeter Life · With You</div>
-    <div class="fright">Instagram · © <span id="year"></span></div>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">NEMO OYA ♡</div>
+    <div class="footer-tag">Good Food · Pretty Drinks · Softer Days</div>
+    <div class="footer-right">Instagram · © <span id="year"></span></div>
   </div>
 </footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
