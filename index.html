@@ -112,6 +112,9 @@ header{
 /* Editorial hero */
 .hero-editorial{
   margin-top:24px;
+  max-width:1160px;
+  margin-left:auto;
+  margin-right:auto;
   display:grid;
   grid-template-columns:43% 57%;
   min-height:620px;
@@ -296,7 +299,7 @@ header{
 .category-copy h3{margin:0;font:400 2rem/1 var(--font-display);letter-spacing:-.025em}
 .category-copy .cn{display:block;margin-top:8px;font-size:.84rem;color:var(--ink-soft)}
 .category-copy p{margin:12px 0 0;color:var(--ink-soft);font-size:.91rem;line-height:1.55}
-.text-link{display:inline-flex;margin-top:14px;padding-bottom:3px;border-bottom:1px solid var(--ink);font-size:.76rem;font-weight:800;letter-spacing:.05em}
+.category-kicker{display:inline-flex;margin-top:14px;font-size:.67rem;font-weight:800;letter-spacing:.12em;color:var(--ink-soft);text-transform:uppercase}
 
 /* Life editorial */
 .life-editorial{
@@ -425,6 +428,7 @@ footer{border-top:1px solid var(--line);padding:27px 0 34px}
 }
 @media(max-width:720px){
   :root{--header-height:66px}
+  header{position:relative}
   .wrap{width:calc(100% - 24px)}
   .hero-editorial{margin-top:12px;grid-template-columns:1fr;min-height:0;border-radius:24px}
   .hero-copy{padding:48px 28px 42px;min-height:430px}
@@ -505,7 +509,7 @@ footer{border-top:1px solid var(--line);padding:27px 0 34px}
           <h3>30-Minute Meals</h3>
           <span class="cn">30分钟快手饭</span>
           <p>Easy, cosy food for busy days — fast enough for a weeknight, pretty enough to look forward to.</p>
-          <span class="text-link">EXPLORE QUICK MEALS →</span>
+          <span class="category-kicker">Weeknight favourites</span>
         </div>
       </article>
 
@@ -518,7 +522,7 @@ footer{border-top:1px solid var(--line);padding:27px 0 34px}
           <h3>Healthy & Light</h3>
           <span class="cn">健康减脂餐</span>
           <p>Fresh, satisfying plates that feel lighter without turning food into homework.</p>
-          <span class="text-link">EAT A LITTLE LIGHTER →</span>
+          <span class="category-kicker">Lighter plates</span>
         </div>
       </article>
 
@@ -531,7 +535,7 @@ footer{border-top:1px solid var(--line);padding:27px 0 34px}
           <h3>Atmospheric Cocktails</h3>
           <span class="cn">氛围感调酒</span>
           <p>Pretty drinks, candlelight and simple rituals for nights that deserve a little more atmosphere.</p>
-          <span class="text-link">POUR SOMETHING PRETTY →</span>
+          <span class="category-kicker">Evening rituals</span>
         </div>
       </article>
     </div>
