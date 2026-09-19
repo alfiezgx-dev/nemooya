@@ -19,6 +19,15 @@ for (const t of targets) {
 
   await page.goto('http://127.0.0.1:4173', {waitUntil:'networkidle'});
   await page.evaluate(() => document.fonts.ready);
+  await page.evaluate(async () => {
+    const step = Math.max(500, window.innerHeight * 0.8);
+    for (let y = 0; y < document.documentElement.scrollHeight; y += step) {
+      window.scrollTo(0, y);
+      await new Promise(resolve => setTimeout(resolve, 70));
+    }
+    window.scrollTo(0, 0);
+  });
+  await page.waitForLoadState('networkidle');
 
   const result = await page.evaluate(() => {
     const visible = el => {
@@ -75,27 +84,27 @@ for (const t of targets) {
   });
 
   for (const img of result.images) {
-    if (img.visible && (!img.complete || img.naturalWidth === 0)) failures.push(`${t.name}: broken visible image ${D}{img.src}`);
+    if (img.visible && (!img.complete || img.naturalWidth === 0)) failures.push(`${t.name}: broken visible image ${img.src}`);
   }
-  if (result.overflow > 2) failures.push(`${t.name}: horizontal overflow ${D}{result.overflow}px`);
-  if (t.name === 'desktop' && result.h1Font > 110) failures.push(`desktop: masthead too large (${D}{result.h1Font}px)`);
-  if (t.name === 'mobile' && result.h1Font > 64) failures.push(`mobile: masthead too large (${D}{result.h1Font}px)`);
-  if (result.heroRatio !== null && result.heroRatio < 1.5) failures.push(`${t.name}: hero image density ${D}{result.heroRatio.toFixed(2)}x < 1.5x`);
+  if (result.overflow > 2) failures.push(`${t.name}: horizontal overflow ${result.overflow}px`);
+  if (t.name === 'desktop' && result.h1Font > 110) failures.push(`desktop: masthead too large (${result.h1Font}px)`);
+  if (t.name === 'mobile' && result.h1Font > 64) failures.push(`mobile: masthead too large (${result.h1Font}px)`);
+  if (result.heroRatio !== null && result.heroRatio < 1.5) failures.push(`${t.name}: hero image density ${result.heroRatio.toFixed(2)}x < 1.5x`);
   if (result.heroFetchPriority !== 'high') failures.push(`${t.name}: hero image missing fetchpriority=high`);
   for (const [i, r] of result.contentRatios.entries()) {
-    if (r < 1.5) failures.push(`${t.name}: content image #${D}{i + 1} density ${D}{r.toFixed(2)}x < 1.5x`);
+    if (r < 1.5) failures.push(`${t.name}: content image #${i + 1} density ${r.toFixed(2)}x < 1.5x`);
   }
-  if (result.draftsVisible) failures.push(`${t.name}: ${D}{result.draftsVisible} draft module(s) are visible`);
+  if (result.draftsVisible) failures.push(`${t.name}: ${result.draftsVisible} draft module(s) are visible`);
   if (/coming soon/i.test(result.bodyText)) failures.push(`${t.name}: visible "coming soon" copy found`);
-  if (result.missingTargets.length) failures.push(`${t.name}: broken internal anchors: ${D}{result.missingTargets.join(', ')}`);
-  if (result.duplicateSources.length) failures.push(`${t.name}: duplicate visible image sources: ${D}{JSON.stringify(result.duplicateSources)}`);
-  if (result.belowFoldNonLazy.length) failures.push(`${t.name}: below-fold images missing lazy loading: ${D}{result.belowFoldNonLazy.join(', ')}`);
+  if (result.missingTargets.length) failures.push(`${t.name}: broken internal anchors: ${result.missingTargets.join(', ')}`);
+  if (result.duplicateSources.length) failures.push(`${t.name}: duplicate visible image sources: ${JSON.stringify(result.duplicateSources)}`);
+  if (result.belowFoldNonLazy.length) failures.push(`${t.name}: below-fold images missing lazy loading: ${result.belowFoldNonLazy.join(', ')}`);
   if (!result.hasHeroPreload) failures.push(`${t.name}: hero preload missing`);
   if (!result.hasOgTitle || !result.hasOgDescription || !result.hasOgImage || !result.hasTwitterCard) failures.push(`${t.name}: social sharing metadata incomplete`);
-  if (consoleErrors.length) failures.push(`${t.name}: console errors: ${D}{consoleErrors.join(' | ')}`);
-  if (pageErrors.length) failures.push(`${t.name}: page errors: ${D}{pageErrors.join(' | ')}`);
+  if (consoleErrors.length) failures.push(`${t.name}: console errors: ${consoleErrors.join(' | ')}`);
+  if (pageErrors.length) failures.push(`${t.name}: page errors: ${pageErrors.join(' | ')}`);
 
-  await page.screenshot({path:`qa-artifacts/${D}{t.name}.png`, fullPage:true});
+  await page.screenshot({path:`qa-artifacts/${t.name}.png`, fullPage:true});
   await browser.close();
 }
 
