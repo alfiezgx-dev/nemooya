@@ -46,11 +46,19 @@ Release requires:
 - full-page screenshots generated for visual review
 
 ## Typography
-- English display uses Georgia/Times fallbacks.
+- English display uses Cormorant Garamond with Georgia/Times fallbacks.
+- Body copy uses DM Sans with system sans-serif fallbacks.
+- Google Fonts preconnect + stylesheet links are required on the public homepage and AI Lab.
 - Chinese uses PingFang SC / Hiragino Sans GB / Microsoft YaHei / sans-serif.
 - No novelty font may be the sole fallback.
 - Brand colors, font stacks, radii and core spacing live in :root custom properties.
 - No clipped headings at test viewports.
+
+## AI Lab
+- ai-lab.html is public and linked from the homepage navigation.
+- The page must show truthful experiment statuses; no fake working controls.
+- AI Lab uses smoke blue only as a local accent while preserving the core NEMO cream/blush/sage identity.
+- Desktop and mobile AI Lab screenshots are included in QA artifacts.
 
 ## Content templates
 - recipe-template.html and cocktail-template.html must exist.
